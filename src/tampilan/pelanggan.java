@@ -11,13 +11,13 @@ import java.awt.event.KeyEvent;
 import koneksi.koneksi;
 import javax.swing.ButtonGroup;
 
-public class Pelanggan extends javax.swing.JFrame {
+public class pelanggan extends javax.swing.JFrame {
     private Connection conn = new koneksi().connect();
     private DefaultTableModel tabmode;
     private javax.swing.ButtonGroup buttonGroup1;
    
 
-    public Pelanggan() {
+    public pelanggan() {
         initComponents();
         
         buttonGroup1 = new ButtonGroup();
@@ -46,7 +46,7 @@ protected void datatable(){
     String cariitem = txtcari.getText();
 
     try {
-        String sql = "SELECT * FROM pelanggan where id like '%"+cariitem+"%' or nmplg like '%"+cariitem+"%' order by id asc";
+        String sql = "SELECT * FROM pelanggan where id like '%"+cariitem+"%' or nmplgn like '%"+cariitem+"%' order by id asc";
         Statement stat = conn.createStatement();
         ResultSet hasil = stat.executeQuery(sql);
         while (hasil.next()){
@@ -527,7 +527,7 @@ protected void datatable(){
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Pelanggan().setVisible(true);
+                new pelanggan().setVisible(true);
             }
         });
     }
